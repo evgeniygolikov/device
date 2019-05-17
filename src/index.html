@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Интернет-магазин «Девайс»</title>
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body class="page page--loading">
+  <%=
+    _.template(require('./includes/page-header.html'))({
+      page: 'index',
+      title: 'Интернет-магазин «Девайс»',
+      catalogMenu: {
+        title: 'Каталог товаров',
+        lists: [
+          ['Виртуальная реальность', 'Моноподы для селфи', 'Экшн-камеры'],
+          ['Фитнес-браслеты', 'Умные часы'],
+          ['Квадрокоптеры']
+        ]
+      }
+    })
+  %>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function handleContentLoad() {
+      document.removeEventListener('DOMContentLoaded', handleContentLoad);
+      requestAnimationFrame(function showPage() {
+        document.body.classList.remove('page--loading');
+      });
+    });
+  </script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

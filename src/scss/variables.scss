@@ -1,0 +1,22 @@
+/**
+  * Colors
+  */
+  $white: #ffffff !default;
+  $black: #000000 !default;
+  $medium-black: #464646 !default;
+  $yellow: #f0c52e !default;
+  $light-yellow: mix($yellow, $white, 50%) !default;
+  
+  /**
+    * Fonts
+    */
+  $font-family-gilroy: 'Gilroy', sans-serif !default;
+  $font-family-open-sans: 'Open Sans', sans-serif !default;
+  $font-weight-light: 300;
+  $font-weight-normal: 400;
+  $font-weight-bold: 800;
+  
+  /**
+    * Layout
+    */
+  $container-width: 1200px;  

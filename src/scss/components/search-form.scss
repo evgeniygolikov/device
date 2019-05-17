@@ -1,0 +1,104 @@
+.search-form {
+  position: relative;
+  display: flex;
+  font-family: $font-family-open-sans;
+  font-size: 15px;
+}
+
+.search-form__field {
+  width: 100%;
+  padding: 9px 8px 8px 38px;
+  font-weight: $font-weight-light;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: $black;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M15.7 14.3l-3.104-3.104A6.979 6.979 0 0 0 14 7a7 7 0 1 0-7 7 6.963 6.963 0 0 0 4.193-1.404L14.3 15.7c.185.184.38.3.7.3a1 1 0 0 0 1-1 .93.93 0 0 0-.3-.7zM2 7c0-2.762 2.238-5 5-5s5 2.238 5 5-2.238 5-5 5-5-2.238-5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 3px 17px;
+  background-size: 16px 16px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::placeholder {
+    opacity: 1;
+    color: rgba($black, 0.3);
+  }
+
+  &:hover::placeholder {
+    color: rgba($black, 0.6);
+  }
+
+  &:focus::placeholder {
+    color: $black;
+  }
+
+  &:focus {
+    border-color: $black;
+    outline: none;
+  }
+
+  // overrides default background color
+  &:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button {
+    -webkit-appearance: none;
+  }
+}
+
+.search-form--nojs .search-form__field,
+.search-form__field--focused {
+  border-color: $black;
+}
+
+// if autocomplete will be `on`, this helps override webkit default background color
+@-webkit-keyframes autofill {
+  to {
+    background: transparent;
+  }
+}
+
+.search-form__submit {
+  width: 85px;
+  padding: 7px 8px 8px;
+  font-weight: $font-weight-light;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: $black;
+  background-color: transparent;
+  border: 2px solid $black;
+  cursor: pointer;
+  opacity: 0;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $black;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    color: rgba($white, 0.3);
+  }
+}
+
+.search-form--nojs .search-form__submit,
+.search-form__submit--visible {
+  opacity: 1;
+}

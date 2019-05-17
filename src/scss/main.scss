@@ -1,0 +1,14 @@
+@import 'variables.scss';
+
+@import '/base/fonts.scss';
+@import '/base/normalize.scss';
+@import '/base/global.scss';
+
+@import '/components/page';
+@import '/components/visually-hidden';
+@import '/components/button';
+@import '/components/logo';
+@import '/components/page-header';
+@import '/components/search-form';
+@import '/components/menu';
+@import '/components/catalog-menu';

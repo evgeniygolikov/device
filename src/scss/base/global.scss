@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+*::selection {
+  background-color: rgba($yellow, 0.75);
+}
+
+html {
+  background-color: $white;
+}

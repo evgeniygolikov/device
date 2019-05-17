@@ -1,0 +1,38 @@
+<header class="page-header">
+  <h1 class="visually-hidden"><%= title %></h1>
+  <nav class="page-header__navigation" role="navigation">
+    <a class="page-header__logo logo">Device</a>
+    <div class="page-header__group">
+      <form class="page-header__search search-form search-form--nojs" action="/" method="get">
+        <input class="search-form__field" id="search-form-field" type="search" name="search-query" aria-label="Поиск по сайту" placeholder="Поиск по сайту" autocomplete="off" minlength="2">
+        <button class="search-form__submit" type="submit">Найти</button>
+      </form>
+      <ul class="page-header__catalog catalog-menu catalog-menu--nojs">
+        <li class="catalog-menu__item">
+          <button class="catalog-menu__trigger button"><%= catalogMenu.title %></button>
+          <div class="catalog-menu__dropdown">
+            <% for (const list of catalogMenu.lists) { %>
+              <ul class="catalog-menu__list">
+                <% for (const link of list) { %>
+                  <li class="catalog-menu__item">
+                    <a class="catalog-menu__link" href="#"><%= link %></a>
+                  </li>
+                <% } %>
+              </ul>
+            <% } %>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="page-header__group">
+      <ul class="menu menu--user menu--user-logged-in">
+        <li class="menu__item">
+          Валентин Петухов
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#">Войти</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
