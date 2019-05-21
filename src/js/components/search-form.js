@@ -12,7 +12,8 @@ const ClassName = {
 };
 
 const ValidationErrorMessage = {
-  TOO_SHORT: 'Текст поискового запроса должен содержать не менее 2-х символов'
+  TOO_SHORT: 'Текст поискового запроса должен содержать не менее 2-х символов',
+  VALUE_MISSING: 'Текст поискового запроса не может быть пустым'
 };
 
 export default class SearchForm {
@@ -94,12 +95,16 @@ export default class SearchForm {
   handleSearchFieldInvalid(event) {
     if (event.target.validity.tooShort) {
       event.target.setCustomValidity(ValidationErrorMessage.TOO_SHORT);
+    } else if (event.target.validity.valueMissing) {
+      event.target.setCustomValidity(ValidationErrorMessage.VALUE_MISSING);
     }
   }
 
   handleSearchFieldInput(event) {
     if (event.target.validity.tooShort) {
       event.target.setCustomValidity(ValidationErrorMessage.TOO_SHORT);
+    } else if (event.target.validity.valueMissing) {
+      event.target.setCustomValidity(ValidationErrorMessage.VALUE_MISSING);
     } else {
       event.target.setCustomValidity('');
     }
